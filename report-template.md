@@ -1,31 +1,62 @@
-# Module 12 Report Template
-
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+## Purpose of the Analysis
+The analysis aimed to develop machine learning models for predicting loan status using financial data. The dataset included information such as loan size, interest rate, borrower income, and more. The goal was to predict whether a loan is healthy or high-risk.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+## Data Overview
+The target variable, loan_status, had two classes: 0 for healthy loans and 1 for high-risk loans. The data exhibited an imbalance, with a higher number of healthy loans compared to high-risk loans.
+
+## Machine Learning Process
+## Data Preprocessing:
+
+Separation of data into features (x) and the target variable (y).
+Train-test split while maintaining stratification of the target variable.
+
+## Model 1: Logistic Regression (Unbalanced Data):
+
+Training a Logistic Regression model on the original, unbalanced training data.
+Evaluation using balanced accuracy, confusion matrix, and classification report.
+
+## Model 2: Logistic Regression with Random Oversampling:
+
+Application of Random Oversampling to address class imbalance.
+Training a Logistic Regression model on the oversampled data.
+Evaluation of performance using the same metrics.
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+## Machine Learning Model 1: Logistic Regression (Unbalanced Data)
+Balanced Accuracy: 98.93%
+Precision and Recall Scores:
+Healthy Loan (Class 1):
+Precision: 0.99
+Recall: 0.99
+High-Risk Loan (Class 0):
+Precision: 0.87
+Recall: 0.89
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+## Machine Learning Model 2: Logistic Regression with Random Oversampling
+Balanced Accuracy: 99.44%
+Precision and Recall Scores:
+Healthy Loan (Class 1):
+Precision: 0.99
+Recall: 0.99
+High-Risk Loan (Class 0):
+Precision: 0.99
+Recall: 0.99
 
 ## Summary
+Both models performed well, but Model 2, incorporating random oversampling, showed slightly better results.
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+## Recommendation:
 
-If you do not recommend any of the models, please justify your reasoning.
+Model 2 (Logistic Regression with Random Oversampling) is Recommended.
+Improved balanced accuracy and precision-recall scores.
+Addresses the imbalanced nature of the data for a more robust model.
+Considerations:
+
+Model choice depends on the problem; here, correctly identifying high-risk loans is crucial.
+Model 2 provides a good balance for both classes.
+Conclusion:
+
+Model 2, with random oversampling, is the preferred choice for predicting loan status in this financial dataset. It provides a well-balanced approach to identifying both healthy and high-risk loans, crucial for effective risk management in lending.
